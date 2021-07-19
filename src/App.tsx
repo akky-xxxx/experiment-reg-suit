@@ -7,7 +7,7 @@ function App() {
       <header>
         <img src={logo} alt="logo" />
       </header>
-      <p>this app created by create react app</p>
+      <p>this app created by create react app!</p>
     </div>
   );
 }
