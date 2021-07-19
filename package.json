@@ -4,6 +4,7 @@
     "build": "react-scripts build",
     "capture": "yarn screenshot:capture",
     "eject": "react-scripts eject",
+    "fix": "run-p fix:*",
     "fix:pack": "fixpack",
     "reg-suit": "yarn reg-suit:save & yarn reg-suit:open",
     "reg-suit:open": "open \"./report.html\"",
