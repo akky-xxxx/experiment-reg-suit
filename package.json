@@ -20,7 +20,14 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "reg-suit:compare": "reg-suit compare",
+    "reg-suit:prepare": "reg-suit prepare",
+    "reg-suit:run": "reg-suit run",
+    "reg-suit:init": "reg-suit init",
+    "reg-suit:help": "reg-suit help",
+    "reg-suit:sync": "reg-suit sync-expected",
+    "reg-suit": "reg-cli \"./src\" \"./directory_contains_actual_images\" -R ./report.html"
   },
   "eslintConfig": {
     "extends": [
@@ -39,5 +46,12 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "reg-keygen-git-hash-plugin": "^0.10.16",
+    "reg-notify-github-plugin": "^0.10.16",
+    "reg-publish-s3-plugin": "^0.10.16",
+    "reg-simple-keygen-plugin": "^0.10.16",
+    "reg-suit": "^0.10.16"
   }
 }
