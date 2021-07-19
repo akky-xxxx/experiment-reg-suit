@@ -1,7 +1,23 @@
 {
   "name": "react-app",
-  "version": "0.1.0",
-  "private": true,
+  "scripts": {
+    "build": "react-scripts build",
+    "capture": "yarn screenshot:capture",
+    "eject": "react-scripts eject",
+    "fix:pack": "fixpack",
+    "reg-suit": "reg-cli \"./.screenshot/actual\" \"./.screenshot/expected\" -R ./report.html",
+    "screenshot:capture": "storycap http://localhost:6006 -o \".screenshot/actual\"",
+    "screenshot:commit": "yarn screenshot:update && yarn screenshot:git-add && yarn screenshot:git-commit",
+    "screenshot:copy": "shx cp -r \"./.screenshot/actual/*\" \"./.screenshot/expected\"",
+    "screenshot:git-add": "git add \"./.screenshot/expected\"",
+    "screenshot:git-commit": "git commit -m \"docs: update expected screenshot@`date \"+%Y-%m-%d %H:%M:%S\"`\"",
+    "screenshot:remove": "shx rm -r \"./.screenshot/expected/*\"",
+    "screenshot:update": "yarn screenshot:remove && yarn screenshot:copy",
+    "start": "react-scripts start",
+    "storybook": "start-storybook -p 6006 -s public",
+    "test": "react-scripts test",
+    "update-ss": "yarn screenshot:commit"
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
@@ -16,23 +32,32 @@
     "typescript": "^4.1.2",
     "web-vitals": "^1.0.1"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "fix:pack": "fixpack",
-    "eject": "react-scripts eject",
-    "reg-suit": "reg-cli \"./.screenshot/actual\" \"./.screenshot/expected\" -R ./report.html",
-    "storybook": "start-storybook -p 6006 -s public",
-    "capture": "yarn screenshot:capture",
-    "update-ss": "yarn screenshot:commit",
-    "screenshot:capture": "storycap http://localhost:6006 -o \".screenshot/actual\"",
-    "screenshot:copy": "shx cp -r \"./.screenshot/actual/*\" \"./.screenshot/expected\"",
-    "screenshot:remove": "shx rm -r \"./.screenshot/expected/*\"",
-    "screenshot:update": "yarn screenshot:remove && yarn screenshot:copy",
-    "screenshot:git-add": "git add \"./.screenshot/expected\"",
-    "screenshot:git-commit": "git commit -m \"docs: update expected screenshot@`date \"+%Y-%m-%d %H:%M:%S\"`\"",
-    "screenshot:commit": "yarn screenshot:update && yarn screenshot:git-add && yarn screenshot:git-commit"
+  "devDependencies": {
+    "@storybook/addon-actions": "^6.3.4",
+    "@storybook/addon-essentials": "^6.3.4",
+    "@storybook/addon-links": "^6.3.4",
+    "@storybook/node-logger": "^6.3.4",
+    "@storybook/preset-create-react-app": "^3.2.0",
+    "@storybook/react": "^6.3.4",
+    "fixpack": "^4.0.0",
+    "reg-keygen-git-hash-plugin": "^0.10.16",
+    "reg-suit": "^0.10.16",
+    "shx": "^0.3.3",
+    "storycap": "^3.0.4"
+  },
+  "version": "0.1.0",
+  "private": true,
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   },
   "eslintConfig": {
     "extends": [
@@ -49,30 +74,5 @@
         }
       }
     ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "devDependencies": {
-    "@storybook/addon-actions": "^6.3.4",
-    "@storybook/addon-essentials": "^6.3.4",
-    "@storybook/addon-links": "^6.3.4",
-    "@storybook/node-logger": "^6.3.4",
-    "@storybook/preset-create-react-app": "^3.2.0",
-    "@storybook/react": "^6.3.4",
-    "fixpack": "^4.0.0",
-    "reg-keygen-git-hash-plugin": "^0.10.16",
-    "reg-suit": "^0.10.16",
-    "shx": "^0.3.3",
-    "storycap": "^3.0.4"
   }
 }
