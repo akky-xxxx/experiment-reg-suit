@@ -67,6 +67,7 @@
     "@storybook/node-logger": "^6.3.4",
     "@storybook/preset-create-react-app": "^3.2.0",
     "@storybook/react": "^6.3.4",
+    "reg-simple-keygen-plugin": "^0.10.16",
     "reg-suit": "^0.10.16",
     "storycap": "^3.0.4"
   }
