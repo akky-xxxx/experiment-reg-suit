@@ -27,7 +27,7 @@
     "reg-suit:init": "reg-suit init --use-yarn",
     "reg-suit:help": "reg-suit help",
     "reg-suit:sync": "reg-suit sync-expected",
-    "reg-suit": "reg-cli \"./src\" \"./directory_contains_actual_images\" -R ./report.html",
+    "reg-suit": "reg-cli \"./__screenshots__\" \"./__expected-ss__\" -R ./report.html",
     "storybook": "start-storybook -p 6006 -s public",
     "storycap": "storycap http://localhost:6006",
     "build-storybook": "build-storybook -s public"
