@@ -24,11 +24,12 @@
     "reg-suit:compare": "reg-suit compare",
     "reg-suit:prepare": "reg-suit prepare",
     "reg-suit:run": "reg-suit run",
-    "reg-suit:init": "reg-suit init",
+    "reg-suit:init": "reg-suit init --use-yarn",
     "reg-suit:help": "reg-suit help",
     "reg-suit:sync": "reg-suit sync-expected",
     "reg-suit": "reg-cli \"./src\" \"./directory_contains_actual_images\" -R ./report.html",
     "storybook": "start-storybook -p 6006 -s public",
+    "storycap": "storycap http://localhost:6006",
     "build-storybook": "build-storybook -s public"
   },
   "eslintConfig": {
@@ -70,6 +71,7 @@
     "reg-notify-github-plugin": "^0.10.16",
     "reg-publish-s3-plugin": "^0.10.16",
     "reg-simple-keygen-plugin": "^0.10.16",
-    "reg-suit": "^0.10.16"
+    "reg-suit": "^0.10.16",
+    "storycap": "^3.0.4"
   }
 }
