@@ -23,7 +23,15 @@
     "eject": "react-scripts eject",
     "reg-suit": "reg-cli \"./.screenshot/actual\" \"./.screenshot/expected\" -R ./report.html",
     "storybook": "start-storybook -p 6006 -s public",
-    "storycap": "storycap http://localhost:6006 -o \".screenshot/actual\""
+    "capture": "yarn screenshot:capture",
+    "update-ss": "yarn screenshot:commit",
+    "screenshot:capture": "storycap http://localhost:6006 -o \".screenshot/actual\"",
+    "screenshot:copy": "shx cp -r \"./.screenshot/actual/*\" \"./.screenshot/expected\"",
+    "screenshot:remove": "shx rm -r \"./.screenshot/expected/*\"",
+    "screenshot:update": "yarn screenshot:remove && yarn screenshot:copy",
+    "screenshot:git-add": "git add \"./.screenshot/expected\"",
+    "screenshot:git-commit": "git commit -m \"docs: update expected screenshot@`date \"+%Y-%m-%d %H:%M:%S\"`\"",
+    "screenshot:commit": "yarn screenshot:update && yarn screenshot:git-add && yarn screenshot:git-commit"
   },
   "eslintConfig": {
     "extends": [
