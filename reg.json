@@ -1,1 +1,1 @@
-{"failedItems":["App/Primary.png"],"newItems":[],"deletedItems":[],"passedItems":[],"expectedItems":["App/Primary.png"],"actualItems":["App/Primary.png"],"diffItems":["App/Primary.png"],"actualDir":"./__screenshots__","expectedDir":"./__expected-ss__","diffDir":"./-R"}
+{"failedItems":[],"newItems":[],"deletedItems":[],"passedItems":["App/Primary.png"],"expectedItems":["App/Primary.png"],"actualItems":["App/Primary.png"],"diffItems":[],"actualDir":"./.screenshot/actual","expectedDir":"./.screenshot/expected","diffDir":"./-R"}

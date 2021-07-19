@@ -21,9 +21,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "reg-suit": "reg-cli \"./__screenshots__\" \"./__expected-ss__\" -R ./report.html",
+    "reg-suit": "reg-cli \"./.screenshot/actual\" \"./.screenshot/expected\" -R ./report.html",
     "storybook": "start-storybook -p 6006 -s public",
-    "storycap": "storycap http://localhost:6006"
+    "storycap": "storycap http://localhost:6006 -o \".screenshot/actual\""
   },
   "eslintConfig": {
     "extends": [
