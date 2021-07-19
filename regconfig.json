@@ -8,6 +8,6 @@
     }
   },
   "plugins": {
-    "reg-simple-keygen-plugin": true
+    "reg-keygen-git-hash-plugin": true
   }
 }
