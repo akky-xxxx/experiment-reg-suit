@@ -1,17 +1,22 @@
 import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-
 import App from './App';
 
 export default {
   title: 'App',
-  component: App,
-  argTypes: {
-    backgroundColor: { control: 'color' },
+  parameters: {
+    screenshot: {
+      delay: 200,
+    },
   },
-} as ComponentMeta<typeof App>;
+};
 
-const Template: ComponentStory<typeof App> = () => <App />;
-
-export const Primary = Template.bind({});
-Primary.args = {};
+export const Pc = () => <App />
+export const Sp = () => <App />
+Sp.parameters = {
+  viewport: {
+    defaultViewport: "iphonex",
+  },
+  screenshot: {
+    viewport: "iPhone X",
+  },
+}
