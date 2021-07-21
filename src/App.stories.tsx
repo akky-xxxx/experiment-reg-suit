@@ -17,6 +17,7 @@ Sp.parameters = {
     defaultViewport: "iphonex",
   },
   screenshot: {
+    // refer: https://obel.hatenablog.jp/entry/20200127/1580070600
     viewport: "iPhone X",
   },
 }
