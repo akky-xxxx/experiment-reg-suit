@@ -2,24 +2,21 @@
   "name": "react-app",
   "scripts": {
     "build": "react-scripts build",
-    "capture": "yarn ss:capture",
+    "compare-story": "run-s -c ss:capture reg-suit:save reg-suit:open",
     "eject": "react-scripts eject",
     "fix": "run-p fix:*",
     "fix:pack": "fixpack",
-    "reg-suit": "yarn reg-suit:save & yarn reg-suit:open",
     "reg-suit:open": "open \"./report.html\"",
     "reg-suit:save": "reg-cli \"./.screenshot/actual\" \"./.screenshot/expected\" \"./.screenshot/diff\" -R \"./report.html\"",
     "ss:capture": "storycap http://localhost:6006 -o \".screenshot/actual\"",
-    "ss:commit": "run-s ss:update ss:git-add ss:git-commit",
     "ss:copy": "shx cp -r \"./.screenshot/actual/*\" \"./.screenshot/expected\"",
     "ss:git-add": "git add \"./.screenshot/expected\"",
     "ss:git-commit": "git commit -m \"docs: update expected screenshot@`date \"+%Y-%m-%d %H:%M:%S\"`\"",
     "ss:remove": "shx rm -r \"./.screenshot/expected/*\"",
-    "ss:update": "run-s ss:remove ss:copy",
     "start": "react-scripts start",
     "storybook": "start-storybook -p 6006 -s public",
     "test": "react-scripts test",
-    "update-ss": "yarn ss:commit"
+    "update-ss": "run-s ss:remove ss:copy ss:git-add ss:git-commit"
   },
   "dependencies": {
     "react": "^17.0.2",
