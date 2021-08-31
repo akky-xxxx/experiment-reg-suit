@@ -1,5 +1,9 @@
 # dependencies
 /node_modules
+reg.json
+report.html
+.screenshot/actual
+.screenshot/diff
 
 # misc
 .DS_Store
