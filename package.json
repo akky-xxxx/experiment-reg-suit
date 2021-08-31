@@ -7,7 +7,9 @@
     "fix": "run-p fix:*",
     "fix:pack": "fixpack",
     "start": "react-scripts start",
-    "test": "react-scripts test"
+    "test": "react-scripts test",
+    "storybook": "start-storybook -p 6006 -s public",
+    "build-storybook": "build-storybook -s public"
   },
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
@@ -25,6 +27,12 @@
     "web-vitals": "^2.1.0"
   },
   "devDependencies": {
+    "@storybook/addon-actions": "^6.3.7",
+    "@storybook/addon-essentials": "^6.3.7",
+    "@storybook/addon-links": "^6.3.7",
+    "@storybook/node-logger": "^6.3.7",
+    "@storybook/preset-create-react-app": "^3.2.0",
+    "@storybook/react": "^6.3.7",
     "@types/styled-components": "^5.1.13",
     "fixpack": "^4.0.0",
     "npm-run-all": "^4.1.5"
@@ -48,6 +56,16 @@
     "extends": [
       "react-app",
       "react-app/jest"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "**/*.stories.*"
+        ],
+        "rules": {
+          "import/no-anonymous-default-export": "off"
+        }
+      }
     ]
   },
   "repository": "https://github.com/akky-xxxx/reg-suit-test.git"
